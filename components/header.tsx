@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Header = () => {
     return (
-        <div className="fixed top-0 w-full px-30 py-5 border-b border-gray-100">
+        <div className="top-0 w-full px-30 py-5 border-b border-gray-100">
             <div className="flex justify-between">
 
                 {/* Logo */}
@@ -21,7 +21,7 @@ const Header = () => {
                 <Link href="/signup">
                     <button className="cursor-pointer w-30 bg-[#3F7D58] px-5 py-3 rounded-2xl font-bold hover:scale-105 transition-all">Sign-Up</button>
                 </Link>
-                </div>
+                </div> 
 
             </div>
         </div>
