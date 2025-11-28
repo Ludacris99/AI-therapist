@@ -27,18 +27,16 @@ const Ripple = () => {
             </style>
 
             <div
-                className="relative"
+                className="relative lg:h-[400] max-lg:h-[300] max-sm:h-[200]"
                 style={{
-                    "--size": "600px",
                     "--duration": "2s",
                     "--background":
                         "linear-gradient(0deg, rgba(50, 50, 50, 0.2) 0%, rgba(100, 100, 100, 0.2) 100%)",
-                    height: "var(--size)",
                     aspectRatio: "1 / 1",
                 }}
             >
                 {/* Five Ripple Layers */}
-                {[0, 1, 2, 3, 4].map((i) => (
+                {[0, 1, 2, 3, 4, 5, 6].map((i) => (
                     <div
                         key={i}
                         className="absolute rounded-full backdrop-blur-md"
@@ -50,14 +48,10 @@ const Ripple = () => {
                             inset: `${40 - i * 10}%`,
                             zIndex: `${99 - i}`,
                             borderColor: `rgba(100, 100, 100, ${1 - i * 0.2})`,
-                            opacity: '40%',
+                            opacity: '20%',
                         }}
                     ></div>
                 ))}
-
-                {/* center logo */}
-                <div className="absolute inset-0 grid place-content-center p-[30%]">
-                </div>
             </div>
         </>
     );

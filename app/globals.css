@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #191919;
+  --background: #0D0D0D;
   --foreground: #ffffff;
 }
 
@@ -12,8 +12,24 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@layer utilities{
+  .soft-green{
+    color: #7ADAA5;
+  }
+  .soft-green-bg{
+    background-color: #7ADAA580;
+  }
+  .soft-blue{
+    color: #239BA7;
+  }
+  .soft-blue-bg{
+    background-color: #239BA780;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
