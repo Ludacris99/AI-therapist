@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import Link from "next/link";
+import NewChatButton from "../../components/ChatButton";
 
 const dashboard = () => (
     <>
@@ -21,12 +22,7 @@ const dashboard = () => (
 
                 {/* Main Button */}
                 <div className="border-[#658C58] border-2 rounded-2xl group hover:shadow-gray-900 shadow-2xl transition-all max-md:w-full">
-                    <Link
-                        href="/chat/123"
-                        className="h-full w-full p-20 max-md:p-10 flex items-center justify-center gap-2 text-4xl max-md:text-2xl font-semibold">
-                        <span><img src="/message.svg" alt="message" height={50} width={50} /></span>
-                        Start Therapy
-                    </Link>
+                    <NewChatButton />
                 </div>
 
             </div>
