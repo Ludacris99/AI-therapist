@@ -1,36 +1,35 @@
-AI Mental Health Therapist
+🧠 AI Mental Health Therapist
 
 Description:
-AI Mental Health Therapist is a web application that provides users with a safe and private space to express their thoughts and emotions. Powered by AI, it offers empathetic conversation, coping strategies, and guidance while keeping all chat content private and secure. The platform emphasizes mental well-being, confidentiality, and accessibility.
+AI Mental Health Therapist is a web application that provides users with a safe and private space to express their thoughts and emotions. Powered by AI, it offers empathetic conversations, coping strategies, and emotional guidance while keeping chat content private and secure.
 
-Features:
+✨ Features
 
-User Authentication: Sign up, log in, and secure session management
+🔐 User Authentication
+Secure sign-up and login with session-based authentication.
 
-AI-Powered Conversations: Interact with an intelligent AI therapist for support and guidance
+🤖 AI-Powered Conversations
+Interact with an intelligent AI therapist designed to provide supportive and thoughtful responses.
 
-Private Chats: Messages are temporary and not stored on the server
+🛡️ Private Chats
+Chat messages are temporary and not stored on the server, ensuring conversation privacy.
 
-Secure Sessions: Session-based authentication ensures that only the logged-in user can access their chats
+🧾 Secure Sessions
+Sessions are managed using HTTP-only cookies to keep user access safe.
 
-Responsive Design: Works seamlessly on desktop and mobile devices
+📱 Responsive Design
+The interface works smoothly across desktop and mobile devices.
 
-Tech Stack
+🛠️ Tech Stack
 
-Frontend: Next.js (App Router)
+🌐 Frontend — Next.js (App Router)
+⚙️ Backend — Node.js, MongoDB, Mongoose
+🧠 AI Integration — Gemini API
+🔑 Authentication — Session-based cookies
+🎨 Styling — Tailwind CSS
 
-Backend: Node.js, MongoDB, Mongoose
+💡 Why This Project
 
-AI Integration: OpenAI API (or similar) for natural language conversation
-
-Authentication & Security: Session-based cookies, secure login
-
-Styling: Tailwind CSS (or your preferred CSS framework)
-
-Why It Stands Out
-
-Focuses on user privacy — chat content is never stored permanently
-
-Simple, clean, and intuitive interface for stress-free interaction
-
-Designed as a supportive companion, not a replacement for professional therapy
+💙 Focuses on mental well-being and emotional support
+🔒 Prioritizes user privacy by not storing chat content
+🚀 Built with modern web technologies and scalable architecture
