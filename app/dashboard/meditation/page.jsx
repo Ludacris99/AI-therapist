@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import MeditationBenefitsCarousel from "../../components/MeditationBenefits";
+import MeditationBenefitsCarousel from "../../../components/MeditationBenefits";
 
 const Meditation = () => {
     const videoRef = useRef(null);

@@ -64,6 +64,8 @@ export default function ChatPage() {
   }
 
   return (
+    <>
+    
     <div className="relative max-w-2xl h-[70vh] border-[#7ADAA5] border rounded-2xl mx-auto mt-40 p-6 overflow-y-auto">
 
       {history.length == 1 ? (
@@ -152,5 +154,10 @@ export default function ChatPage() {
       </div>
 
     </div>
+
+    <p className="text-md text-center italic mt-8">
+    Note: We keep your conversations confidential — chat content is not saved.
+    </p>
+    </>
   );
 }

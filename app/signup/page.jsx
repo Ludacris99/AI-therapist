@@ -3,15 +3,42 @@
 import Link from "next/link";
 import { easeIn, motion } from "motion/react";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const login = () => {
 
     const [mail, setMail] = useState("");
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
+    const [error, setError] = useState("");
 
-    const handleSubmit = () => {
-        console.log("data sumbitted successfully");
+    const router = useRouter();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (!mail || !password || !username) {
+            setError("All fields are required");
+            return;
+        }
+
+        const res = await fetch("/api/auth/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, mail, password }),
+        });
+
+        const data = await res.json();
+
+        // Error if registration failed
+        if (!res.ok) {
+            setError(data.message);
+            return;
+        }
+
+        // Success message if no errors
+        alert(data.message);
+        router.push("/login");
     }
 
     return (
@@ -58,6 +85,8 @@ const login = () => {
                         onChange={(e) => setPassword(e.target.value)}
                     />
 
+                    {error && <p className="text-red-500 text-sm">{error}</p>}
+
                     <div className="mt-16 mb-2">
                         <button
                             className="w-full px-4 py-3 text-white soft-green-bg rounded-lg cursor-pointer"
@@ -65,6 +94,7 @@ const login = () => {
                             Let's Go
                         </button>
                     </div>
+
 
                 </div>
                 <div className="px-8 py-4 text-sm soft-green text-center">

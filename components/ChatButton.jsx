@@ -6,7 +6,7 @@ export default function NewChatButton() {
 
     function createChat() {
         const id = crypto.randomUUID();
-        router.push(`/chat/${id}`);
+        router.push(`/dashboard/chat/${id}`);
     }
 
     return (

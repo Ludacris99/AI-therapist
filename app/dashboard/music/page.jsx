@@ -47,7 +47,7 @@ export default function MusicPlayer() {
 
             {/* Gif*/}
             <div>
-                <img src="musicGif.gif" alt="musicGif" />
+                <img src="/musicGif.gif" alt="musicGif" />
             </div>
 
             {/* Track Title */}

@@ -3,17 +3,40 @@
 import Link from "next/link";
 import { easeIn, motion } from "motion/react";
 import { useState } from "react";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const login = () => {
 
     const [mail, setMail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+    const router = useRouter();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("data sumbitted successfully");
-        redirect("/dashboard")
+
+        if (!mail || !password) {
+            setError("All fields are required");
+            return;
+        }
+
+        const res = await fetch("/api/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ mail, password }),
+        });
+
+        const data = await res.json();
+
+        // Error if login failed
+        if (!res.ok) {
+            setError(data.message);
+            return;
+        }
+
+        // Success message if no errors
+        alert(data.message);
+        router.push("/dashboard");
     }
 
     return (
@@ -40,7 +63,6 @@ const login = () => {
                         type="email"
                         value={mail}
                         onChange={(e) => setMail(e.target.value)}
-                        required
                     />
 
                     <label className="text-sm font-medium text-zinc-200">Password</label>
@@ -50,8 +72,9 @@ const login = () => {
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        required
                     />
+
+                    {error && <p className="text-red-500 text-sm">{error}</p>}
 
                     <div className="mt-16 mb-2">
                         <button

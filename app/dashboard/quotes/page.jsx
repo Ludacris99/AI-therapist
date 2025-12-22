@@ -1,4 +1,4 @@
-import QuoteBox from "../../components/QuoteBox";
+import QuoteBox from "../../../components/QuoteBox";
 
 const Quotes = () => {
     return (
