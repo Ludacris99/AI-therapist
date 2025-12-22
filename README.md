@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🧠 AI Mental Health Therapist
 
-## Getting Started
+Description:
+AI Mental Health Therapist is a web application that provides users with a safe and private space to express their thoughts and emotions. Powered by AI, it offers empathetic conversations, coping strategies, and emotional guidance while keeping chat content private and secure.
 
-First, run the development server:
+✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🔐 User Authentication
+Secure sign-up and login with session-based authentication.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🤖 AI-Powered Conversations
+Interact with an intelligent AI therapist designed to provide supportive and thoughtful responses.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🛡️ Private Chats
+Chat messages are temporary and not stored on the server, ensuring conversation privacy.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🧾 Secure Sessions
+Sessions are managed using HTTP-only cookies to keep user access safe.
 
-## Learn More
+📱 Responsive Design
+The interface works smoothly across desktop and mobile devices.
 
-To learn more about Next.js, take a look at the following resources:
+🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🌐 Frontend — Next.js (App Router)
+⚙️ Backend — Node.js, MongoDB, Mongoose
+🧠 AI Integration — Gemini API
+🔑 Authentication — Session-based cookies
+🎨 Styling — Tailwind CSS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+💡 Why This Project
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+💙 Focuses on mental well-being and emotional support
+🔒 Prioritizes user privacy by not storing chat content
+🚀 Built with modern web technologies and scalable architecture
