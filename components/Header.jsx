@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import { cookies } from "next/headers";
 import connectDB from "@/lib/db";
 import Session from "@/models/Session";
@@ -15,7 +13,7 @@ const Header = async () => {
 
     return (
         <div className="top-0 fixed w-screen z-200 border-b border-gray-100/30 bg-black/60 backdrop-blur-3xl">
-            <HeaderClient isLoggedIn={!!session} />
+            <HeaderClient isLoggedIn={session} />
         </div>
     );
 };
