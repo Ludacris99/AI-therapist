@@ -37,6 +37,7 @@ const login = () => {
         // Success message if no errors
         alert(data.message);
         router.push("/dashboard");
+        router.refresh(); 
     }
 
     return (
