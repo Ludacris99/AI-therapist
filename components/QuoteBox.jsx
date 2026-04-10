@@ -12,8 +12,8 @@ const QuoteBox = () => {
                 const res = await fetch("/api/quote");
                 const data = await res.json();
 
-                setQuote(data[0].q);
-                setAuthor(data[0].a);
+                setQuote(data.quote);
+                setAuthor(data.author);
 
             } catch (err) {
                 setQuote("Failed to fetch quote.");
