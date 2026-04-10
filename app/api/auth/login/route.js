@@ -17,7 +17,7 @@ export async function POST(req) {
 
     await connectDB();
 
-    const existingUser = await User.findOne({ email: mail });
+    const existingUser = await User.findOne({ email: mail.toLowerCase() });
     if (!existingUser) {
       return NextResponse.json(
         { message: "User doesn't exist!" },
@@ -55,6 +55,14 @@ export async function POST(req) {
     return res;
   } catch (error) {
     console.error(error);
+
+    if (error?.name === "MongooseServerSelectionError") {
+      return NextResponse.json(
+        { message: "Database unavailable. Please try again in a moment." },
+        { status: 503 }
+      );
+    }
+
     return NextResponse.json(
       { message: "Internal server error" },
       { status: 500 }
