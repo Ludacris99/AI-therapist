@@ -1,17 +1,27 @@
 // components/Header.jsx
 import { cookies } from "next/headers";
-import connectDB from "@/lib/db";
-import Session from "@/models/Session";
 import HeaderClient from "./HeaderClient";
 
 const Header = async () => {
-  await connectDB();
-
   const cookieStore = await cookies();
   const sessionId = cookieStore.get("session-cookie")?.value;
-  const session = sessionId ? await Session.findById(sessionId) : null;
+  let isLoggedIn = false;
 
-  const isLoggedIn = !!session; // or add expiry check if you want
+  if (sessionId && process.env.MONGODB_URI) {
+    try {
+      const [{ default: connectDB }, { default: Session }] = await Promise.all([
+        import("@/lib/db"),
+        import("@/models/Session"),
+      ]);
+
+      await connectDB();
+      const session = await Session.findById(sessionId).lean();
+      isLoggedIn = !!session && new Date(session.expiresAt) > new Date();
+    } catch {
+      // Keep header render-safe during build/not-found prerender.
+      isLoggedIn = false;
+    }
+  }
 
   return (
     <div className="top-0 fixed w-screen z-200 border-b border-gray-100/30 bg-black/60 backdrop-blur-3xl">
